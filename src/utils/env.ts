@@ -7,6 +7,7 @@ const envConfig = {
     username: "dev_user",
     password: "dev_password"
   },
+  // That is the saucedemo file
   qa: {
     name: "qa",
     baseUrl: "https://www.saucedemo.com/",
