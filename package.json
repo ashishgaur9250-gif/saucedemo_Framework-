@@ -1,0 +1,36 @@
+{
+  "name": "saucedemo-playwright-typescript-framework",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --headed",
+    "test:dev": "cross-env ENV=dev playwright test",
+    "test:qa": "cross-env ENV=qa playwright test",
+    "test:stage": "cross-env ENV=stage playwright test",
+    "report": "playwright show-report",
+    "allure:report": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report",
+    "allure:clear": "rimraf allure-results allure-report",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "allure-playwright": "^3.2.1",
+    "allure": "^3.2.1",
+    "cross-env": "^10.0.0",
+    "eslint": "^9.33.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "saucedemo-playwright-typescript-framework": "file:"
+  }
+}
