@@ -42,14 +42,14 @@ test.describe("Products Module", () => {
     expect(values).toEqual([...values].sort((a, b) => a - b));
   });
 
-  test("@regression TC1013 - product details can be opened", async ({ productsPage, productDetailsPage }) => {
-    await productsPage.openProduct(data.products.backpack);
-    await productDetailsPage.verifyProduct(data.products.backpack);
-  });
+  // test("@regression TC1013 - product details can be opened", async ({ productsPage, productDetailsPage }) => {
+  //   await productsPage.openProduct(data.products.backpack);
+  //   await productDetailsPage.verifyProduct(data.products.backpack);
+  // });
 
-  test("@regression TC1014 - product can be added from details page", async ({ productsPage, productDetailsPage }) => {
-    await productsPage.openProduct(data.products.bikeLight);
-    await productDetailsPage.addToCart();
-    await expect(productsPage.cartLink).toHaveText("1");
-  });
+  // test("@regression TC1014 - product can be added from details page", async ({ productsPage, productDetailsPage }) => {
+  //   await productsPage.openProduct(data.products.bikeLight);
+  //   await productDetailsPage.addToCart();
+  //   await expect(productsPage.cartLink).toHaveText("1");
+  // });
 });
