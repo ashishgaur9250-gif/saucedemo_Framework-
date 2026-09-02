@@ -1,6 +1,7 @@
 name: SauceDemo Playwright Tests
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       environment:
