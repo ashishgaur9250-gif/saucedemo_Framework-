@@ -2,6 +2,8 @@ name: SauceDemo Playwright Tests
 
 on:
   push:
+
+  # Run manually
   workflow_dispatch:
     inputs:
       environment:
@@ -13,6 +15,7 @@ on:
           - dev
           - qa
           - stage
+
       suite:
         description: Suite
         required: true
@@ -20,18 +23,29 @@ on:
         type: choice
         options:
           - smoke
-          - regression     
+          - regression
           - all
 
-jobs:  
+  # Run automatically every day
+  schedule:
+    # 9:00 AM IST = 3:30 AM UTC
+    - cron: '30 3 * * *'
+
+    # 5:00 PM IST = 11:30 AM UTC
+    - cron: '30 11 * * *'
+
+
+jobs:
   test:
     runs-on: ubuntu-latest
+
     env:
       ENV: ${{ inputs.environment }}
       SAUCE_USERNAME: standard_user
       SAUCE_PASSWORD: secret_sauce
 
     steps:
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -40,6 +54,7 @@ jobs:
           cache: npm
 
       - run: npm ci
+
       - run: npx playwright install --with-deps
 
       - name: Run selected suite
