@@ -16,24 +16,24 @@ type Fixtures = {
 };
 
 export const test = base.extend<Fixtures>({
-  env: async ({}, use) => {
-    await use(env);
-  },
-  loginPage: async ({ page }, use) => {
-    await use(new LoginPage(page));
-  },
-  productsPage: async ({ page }, use) => {
-    await use(new ProductsPage(page));
-  },
-  productDetailsPage: async ({ page }, use) => {
-    await use(new ProductDetailsPage(page));
-  },
-  cartPage: async ({ page }, use) => {
-    await use(new CartPage(page));
-  },
-  checkoutPage: async ({ page }, use) => {
-    await use(new CheckoutPage(page));
-  }
+  // env: async ({}, use) => {
+  //   await use(env);
+  // },
+  // loginPage: async ({ page }, use) => {
+  //   await use(new LoginPage(page));
+  // },
+  // productsPage: async ({ page }, use) => {
+  //   await use(new ProductsPage(page));
+  // },
+  // productDetailsPage: async ({ page }, use) => {
+  //   await use(new ProductDetailsPage(page));
+  // },
+  // cartPage: async ({ page }, use) => {
+  //   await use(new CartPage(page));
+  // },
+  // checkoutPage: async ({ page }, use) => {
+  //   await use(new CheckoutPage(page));
+  // }
 });
 
 export { expect } from "@playwright/test";
