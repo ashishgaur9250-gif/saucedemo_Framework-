@@ -26,13 +26,13 @@ on:
           - regression
           - all
 
-  # Run automatically every day
-  schedule:
-    # 9:00 AM IST = 3:30 AM UTC
-    - cron: '30 3 * * *'
+  # # Run automatically every day
+  # schedule:
+  #   # 9:00 AM IST = 3:30 AM UTC
+  #   - cron: '30 3 * * *'
 
-    # 5:00 PM IST = 11:30 AM UTC
-    - cron: '30 11 * * *'
+  #   # 5:00 PM IST = 11:30 AM UTC
+  #   - cron: '30 11 * * *'
 
 
 jobs:
